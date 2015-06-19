@@ -25,7 +25,7 @@ export function store(initial, ...patterns): Observable {
 /**
  * Creates stream that works as Flux dispatcher
  */
-export function dispatcher() {
+export function dispatcher(): Object {
   let dispatcher = new Subject();
 
   function dispatchAsync(id, source) {
@@ -61,7 +61,7 @@ export function Enhance(ComposedComponent: Component, Mixin: Component): Compone
 /**
  * Mixin for store subscription
  */
-export function StoreMixin(store) {
+export function StoreMixin(store: Observable): Component {
   return class extends Component {
     componentWillMount(): void {
       this._sub = store.subscribe(data => this.setState({ data }));
