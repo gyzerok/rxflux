@@ -1,14 +1,15 @@
 /* @flow */
 
-import React, { Component } from 'react';
+import React, { Component, Element } from 'react';
 
 export default class TodoItem extends Component {
-  constructor(props) {
+  constructor(props: Object) {
     super(props);
+
     this.handleRemove = this.handleRemove.bind(this)
   }
 
-  render() {
+  render(): Element {
     return (
       <li key={this.props.id}>
         {this.props.text}
@@ -18,7 +19,7 @@ export default class TodoItem extends Component {
     );
   }
 
-  handleRemove(e) {
+  handleRemove(e: any): void {
     e.preventDefault();
     this.props.onRemove(this.props.id);
   }

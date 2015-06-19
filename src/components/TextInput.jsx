@@ -1,12 +1,13 @@
 /* @flow */
 
-import React, { Component } from 'react';
+import React, { Component, Element } from 'react';
 
 const ENTER_KEY_CODE = 13;
 
 export default class TextInput extends Component {
-  constructor(props) {
-    super(props);
+  constructor(props: Object) {
+    super(props: Object);
+    
     this.handleChange = this.handleChange.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
 
@@ -15,7 +16,7 @@ export default class TextInput extends Component {
     };
   }
 
-  render() {
+  render(): Element {
     return (
       <input
         type="text"
@@ -27,11 +28,11 @@ export default class TextInput extends Component {
     );
   }
 
-  handleChange(e) {
+  handleChange(e: any): void {
     this.setState({ value: e.target.value });
   }
 
-  handleEnter(e) {
+  handleEnter(e: any): void {
     if (!this.state.value.length) return;
     if (e.keyCode === ENTER_KEY_CODE) {
       this.props.handleSave(this.state.value);

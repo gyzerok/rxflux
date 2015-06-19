@@ -1,6 +1,6 @@
 /* @flow */
 
-import React, { Component } from 'react'
+import React, { Component, Element } from 'react'
 import TextInput from './TextInput';
 import TodoList from './TodoList';
 import TodoStore from '../stores/todo';
@@ -8,7 +8,7 @@ import { addTodo, removeTodo } from '../actions/todo';
 import { Enhance, StoreMixin } from '../utils';
 
 class App extends Component {
-  render() {
+  render(): Element {
     return (
       <div>
         <TextInput

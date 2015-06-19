@@ -1,10 +1,10 @@
 /* @flow */
 
-import React, { Component } from 'react'
+import React, { Component, Element } from 'react'
 import TodoItem from './TodoItem';
 
 export default class App extends Component {
-  render() {
+  render(): Element {
     return (
       <ul>
         {this.props.todos.map(todo =>
