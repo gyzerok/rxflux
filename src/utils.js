@@ -54,7 +54,6 @@ export function Enhance(ComposedComponent: Component, mixins: Array<Component>):
   return mixins.reduce((ComposedComponent, Mixin) => {
     return class extends Mixin {
       render() {
-        console.log(this.state);
         return <ComposedComponent {...this.props} {...this.state} />;
       }
     }

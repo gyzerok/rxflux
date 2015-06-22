@@ -5,7 +5,7 @@ import TextInput from './TextInput';
 import TodoList from './TodoList';
 import TodoStore from '../stores/todo';
 import { addTodo, removeTodo } from '../actions/todo';
-import { Enhance, StoreMixin, TestMixin } from '../utils';
+import { Enhance, StoreMixin } from '../utils';
 
 class App extends Component {
   shouldComponentUpdate(nextProps): boolean {
@@ -15,7 +15,6 @@ class App extends Component {
   render(): Element {
     return (
       <div>
-        <p>{this.props.test}</p>
         <TextInput
           value=""
           handleSave={addTodo} />
