@@ -21,6 +21,6 @@ export default class TodoItem extends Component {
 
   handleRemove(e: any): void {
     e.preventDefault();
-    this.props.onRemove(this.props.id);
+    this.props.handleRemove(this.props.id);
   }
 }

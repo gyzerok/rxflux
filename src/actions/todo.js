@@ -2,10 +2,10 @@
 
 import { dispatch } from '../dispatcher';
 
-export function addTodo(text): void {
+export function addTodo(text: string): void {
   dispatch('todo:add', text);
 }
 
-export function removeTodo(id): void {
-
+export function removeTodo(id: number): void {
+  dispatch('todo:remove', id);
 }

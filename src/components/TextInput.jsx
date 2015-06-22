@@ -6,8 +6,8 @@ const ENTER_KEY_CODE = 13;
 
 export default class TextInput extends Component {
   constructor(props: Object) {
-    super(props: Object);
-    
+    super(props);
+
     this.handleChange = this.handleChange.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
 

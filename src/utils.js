@@ -1,6 +1,6 @@
 /* @flow */
 
-import { Observable, ReplaySubject } from 'rx';
+import { Observable, Subject, ReplaySubject } from 'rx';
 import React, { Component } from 'react';
 
 /**
@@ -50,12 +50,15 @@ export function dispatcher(): Object {
 /**
  * Function for apply mixins
  */
-export function Enhance(ComposedComponent: Component, Mixin: Component): Component {
-  return class extends Mixin {
-    render() {
-      return <ComposedComponent {...this.props} {...this.state} />;
+export function Enhance(ComposedComponent: Component, mixins: Array<Component>): Component {
+  return mixins.reduce((ComposedComponent, Mixin) => {
+    return class extends Mixin {
+      render() {
+        console.log(this.state);
+        return <ComposedComponent {...this.props} {...this.state} />;
+      }
     }
-  }
+  }, ComposedComponent);
 }
 
 /**
